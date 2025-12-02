@@ -1,0 +1,67 @@
+.dans-debloater-wrap .row-description{ color:#666; font-size:12px; margin-top:6px }
+.dans-debloater-wrap table th{ text-align:left }
+.dans-debloater-wrap .plugin-toggle{ width:120px; text-align:center }
+
+/* Ensure table cells and headers align vertically centered so switches sit in line */
+.dans-debloater-table th,
+.dans-debloater-table td {
+	vertical-align: middle;
+}
+
+/* Center the toggle column headers to match the switch alignment */
+.dans-debloater-table th:nth-child(3),
+.dans-debloater-table th:nth-child(4) {
+	text-align: center;
+}
+.switch{ position:relative; display:inline-block; width:46px; height:24px }
+.switch input{ display:none }
+.slider{ position:absolute; cursor:pointer; inset:0; background:#ccc; border-radius:24px; transition:.2s }
+.slider:before{ position:absolute; content:""; height:18px; width:18px; left:3px; top:3px; background:white; border-radius:50%; transition:.2s }
+.switch input:checked + .slider{ background:#0073aa }
+.switch input:checked + .slider:before{ transform:translateX(22px) }
+.dans-debloater-wrap #dans-debloater-status{ margin-left:12px }
+
+/* Card layout for the settings area */
+.dans-debloater-wrap { background: #fff; padding: 18px; border-radius: 8px; box-shadow: 0 6px 18px rgba(32,33,36,0.06); }
+
+/* Header bar */
+.dd-header{ display:flex; justify-content:space-between; align-items:center; padding:12px 16px; border-radius:6px; background: linear-gradient(90deg,#f6fbfd,#ffffff); margin-bottom:12px; border:1px solid #eef6f9 }
+.dd-header-left h1{ margin:0; font-size:20px }
+.dd-sub{ margin:4px 0 0; color:#6b7280; font-size:13px }
+.dd-header-right .button{ margin-left:8px }
+
+/* Table visuals */
+.dans-debloater-table{ border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:6px }
+.dans-debloater-table tbody tr{ transition: background .15s, transform .08s }
+.dans-debloater-table tbody tr:hover{ transform: translateY(-1px); box-shadow: 0 2px 6px rgba(32,33,36,0.04) }
+.dans-debloater-table tbody tr:nth-child(odd){ background:#fbfdfe }
+.dans-debloater-table thead th{ background:#f3f8fa; border-bottom:1px solid rgba(0,0,0,0.04); padding:12px }
+.dans-debloater-table td{ padding:12px }
+
+/* Badge icons using small inline SVGs */
+.dd-badge{ display:inline-flex; align-items:center; gap:8px }
+.dd-badge:before{ content:''; display:inline-block; width:14px; height:14px; background-size:14px 14px }
+.dd-badge-active:before{ background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23ffffff' d='M9.3 16.3L4.4 11.4 3 12.8l6.3 6.3L21 7.4 19.6 6z'/></svg>"); background-color:#2ea2cc; border-radius:3px }
+.dd-badge-blocked:before{ background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23ffffff' d='M18.3 5.7L12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3 10.6 10.6 16.9 4.3z'/></svg>"); background-color:#d54e21; border-radius:3px }
+
+/* Make the header Help button less prominent */
+.dd-header-right .button{ background:#fff; border:1px solid #e6eef2 }
+
+/* Search box */
+.dans-debloater-wrap #dans-debloater-search{ border:1px solid #ddd; border-radius:4px }
+
+/* Badges */
+.dd-badge{ display:inline-block; padding:4px 8px; border-radius:12px; font-size:12px; color:#fff }
+.dd-badge-active{ background:#2ea2cc }
+.dd-badge-blocked{ background:#d54e21 }
+
+/* Blocked row highlight */
+.dd-blocked{ background:#fff7f6 }
+.dd-blocked .plugin-name strong{ color:#aa2211 }
+
+/* Spinner */
+.dd-spinner{ display:inline-block; width:14px; height:14px; border-radius:50%; border:2px solid rgba(0,0,0,0.1); border-top-color:#0073aa; animation: dd-spin .8s linear infinite; vertical-align:middle; margin-left:8px }
+@keyframes dd-spin{ to { transform:rotate(360deg); } }
+
+/* Disabled state for buttons */
+.dans-debloater-wrap .button[disabled]{ opacity:0.6 }
